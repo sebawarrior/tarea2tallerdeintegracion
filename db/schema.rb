@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180319042842) do
+ActiveRecord::Schema.define(version: 20180402051050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180319042842) do
 
   create_table "notes", force: :cascade do |t|
     t.string "title"
-    t.string "subhead"
+    t.string "subtitle"
     t.string "body"
     t.datetime "date"
     t.datetime "created_at", null: false
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20180319042842) do
   create_table "talks", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "nombre"
-    t.string "body"
+    t.string "author"
+    t.string "comment"
     t.bigint "note_id"
     t.index ["note_id"], name: "index_talks_on_note_id"
   end

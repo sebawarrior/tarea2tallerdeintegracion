@@ -3,12 +3,12 @@
 <%= form_for [@note, @talk] do |form| %>
 <div class="field">
   <%= form.label :Nombre %>
-  <%= form.text_field :nombre %>
+  <%= form.text_field :author %>
 </div>
 
 <div class="field">
   <%= form.label :Contenido %>
-  <%= form.text_field :body %>
+  <%= form.text_field :comment %>
 </div>
 
   <div class="actions">

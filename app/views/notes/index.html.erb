@@ -15,7 +15,7 @@
 
     <% @notes.each do |note| %>
       <h1> Título: <%= note.title %> </h1>
-      <h3> Bajada: <%= note.subhead %></h3>
+      <h3> Bajada: <%= note.subtitle %></h3>
       <% if note.body.length > 500 %>
           <h2> Cuerpo: <%=truncate(note.body, length:500) %></h2>
       <% end %>

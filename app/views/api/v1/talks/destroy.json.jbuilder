@@ -1,2 +1,2 @@
-json.extract! talk, :id, :nombre, :body, :created_at
+json.extract! talk, :id, :author, :comment, :created_at
 json.url note_talks_url(talk, format: :json)
