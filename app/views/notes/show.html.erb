@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @note.title %>
+</p>
+
+<p>
+  <strong>Bajada:</strong>
+  <%= @note.subhead %>
+</p>
+
+<p>
+  <strong>Cuerpo de la noticia:</strong>
+  <%= @note.body %>
+</p>
+
+<p>
+  <strong>Fecha de creación:</strong>
+  <%= @note.created_at %>
+</p>
+
+<p>
+  <strong>Número de comentarios:</strong>
+  <%= @note.talks.length %>
+</p>
+<% if user_signed_in? %>
+<%= link_to 'Editar noticia', edit_note_path(@note) %>
+<% end %>
+
+<h2>Haz un comentario:</h2>
+<%= form_for([@note, @note.talks.build]) do |f| %>
+  <p>
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :Contenido %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<h1>Los comentarios respecto a esta noticia son los siguientes</h1>
+
+<% @note.talks.each do |t| %>
+  <h2> Nombre: <%= t.nombre %> </h2>
+  <h2> Contenido: <%= t.body %> </h2>
+  <h2> ------------------------------------------------------------------ </h2>
+<% end %>
+
+<%= link_to 'Volver', notes_path %>

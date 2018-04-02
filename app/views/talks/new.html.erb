@@ -1,0 +1,18 @@
+<h1>New Talk</h1>
+
+<%= form_for [@note, @talk] do |form| %>
+<div class="field">
+  <%= form.label :Nombre %>
+  <%= form.text_field :nombre %>
+</div>
+
+<div class="field">
+  <%= form.label :Contenido %>
+  <%= form.text_field :body %>
+</div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  <% form.hidden_field :note_id, :value => @note.id %>
+<% end %>

@@ -1,0 +1,15 @@
+<%= form_for [@note, @note.talks.build] do |form| %>
+<div class="field">
+  <%= form.label :Nombre %>
+  <%= form.text_field :nombre %>
+</div>
+
+<div class="field">
+  <%= form.label :Contenido %>
+  <%= form.text_field :body %>
+</div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
