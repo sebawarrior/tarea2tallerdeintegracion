@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'notes#index'
   namespace :api do
     namespace :v1 do
-      resources :notes, path: "entries" do
+      resources :notes, path: "news" do
         resources :talks, path: "comments"
       end
     end
