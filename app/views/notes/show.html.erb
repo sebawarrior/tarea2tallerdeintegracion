@@ -32,11 +32,11 @@
 <%= form_for([@note, @note.talks.build]) do |f| %>
   <p>
     <%= f.label :Nombre %><br>
-    <%= f.text_field :nombre %>
+    <%= f.text_field :author %>
   </p>
   <p>
     <%= f.label :Contenido %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :comment %>
   </p>
   <p>
     <%= f.submit %>
@@ -46,8 +46,8 @@
 <h1>Los comentarios respecto a esta noticia son los siguientes</h1>
 
 <% @note.talks.each do |t| %>
-  <h2> Nombre: <%= t.nombre %> </h2>
-  <h2> Contenido: <%= t.body %> </h2>
+  <h2> Nombre: <%= t.author %> </h2>
+  <h2> Contenido: <%= t.comment %> </h2>
   <h2> ------------------------------------------------------------------ </h2>
 <% end %>
 

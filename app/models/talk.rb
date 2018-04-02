@@ -1,5 +1,5 @@
 class Talk < ApplicationRecord
   belongs_to :note
-  validates :nombre, presence: true
-  validates :body, presence: true
+  validates :author, presence: true
+  validates :comment, presence: true
 end

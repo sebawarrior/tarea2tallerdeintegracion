@@ -15,7 +15,7 @@ class NotesController < ApiController
       @note = Note.find(params[:id])
     rescue Exception => e
       @a = '{
-      "error" : "not_found"
+      "error" : "not found"
       }'
       @data = JSON.parse(@a)
       render json: @data, status: 404
@@ -60,7 +60,7 @@ class NotesController < ApiController
       end
     rescue Exception => e
       @a = '{
-      "error" : "not_found"
+      "error" : "not found"
       }'
       @data = JSON.parse(@a)
       render json: @data, status: 404
@@ -86,7 +86,7 @@ class NotesController < ApiController
       end
     rescue Exception => e
       @a = '{
-      "error" : "not_found"
+      "error" : "not found"
       }'
       @data = JSON.parse(@a)
       render json: @data, status: 404
